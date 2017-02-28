@@ -24,20 +24,23 @@ ori $s0,$s0,0
 
 #############################################
 # Put your code here:
-addi $t0, $t0, 8 # i=8
-lw $s1, 0($s0) # max <- array[0]
+addi $t4, $t4, 8 # i=8
+lw $t0, 0($s0) # max <- array[0]
 addi $t1, $s0, 4 # i+1
 
 loop:
 lw $t2, 0($t1) # $t2 <- array[i]
 
-sub $t2, $s1, $t2
-blez $t2, skip
+sub $t3, $t0, $t2 # $t3 <- max-array[i]
+bgtz $t3, skip # if $t3 <=0 do not update max number
 max:
+addi $t0, $t2, 0 # update max number
 
 skip:
+addi $t1, $t1, 4 # i++
+addi $t4, $t4, -1
+bne $t4, $zero, loop # if i!=0 continue loop
 
-beq $t0, $zero, end # if i==0 end loop
 end:
 
 #
