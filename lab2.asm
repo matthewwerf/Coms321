@@ -24,7 +24,7 @@ ori $s0,$s0,0
 
 #############################################
 # Put your code here:
-addi $t4, $t4, 8 # i=8
+addi $t4, $t4, 9 # i=8
 lw $t0, 0($s0) # max <- array[0]
 addi $t1, $s0, 4 # i+1
 
