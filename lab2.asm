@@ -32,7 +32,7 @@ loop:
 lw $t2, 0($t1) # $t2 <- array[i]
 
 sub $t3, $t0, $t2 # $t3 <- max-array[i]
-bgtz $t3, skip # if $t3 <=0 do not update max number
+blez $t3, skip # if $t3 <=0 do not update max number
 max:
 addi $t0, $t2, 0 # update max number
 
