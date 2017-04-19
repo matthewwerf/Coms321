@@ -48,6 +48,4 @@ beq $t0, $s5, loop		#has to be there
 
 exit:
 
-#other question 12 option assuming a[] != k when m=10
-
 
